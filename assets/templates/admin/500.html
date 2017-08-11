@@ -1,0 +1,14 @@
+{% include "admin/header.html" %}
+<div class="mdl-grid admin-panels">
+
+    <div class="col-md-12 page-section">
+        <h4 class="section-title"><a href="/500">500 Error</a></h4>
+        <div class="horizontal-line"></div>
+    </div>
+    <div class="col-md-12">
+
+        <p>Something bad just happened, an error report has already been generated so this should be fixed soon.</p>
+        <p>Error: {{ error }} </p>
+    </div>
+</div>
+{% include "admin/footer.html" %}

@@ -1,0 +1,228 @@
+/* Infincia, Copyright 2011-2017 Stephen Oliver */
+@import "variables";
+
+
+ul.plain {
+    padding-top: 12px;
+    list-style-type: none;
+    font-size: @list-font-size;
+}
+
+
+ul.releasenotes {
+    padding-top: 12px;
+    list-style-type: none;
+    font-size: @list-font-size;
+}
+
+
+ul.releasenotes li {
+    margin-top: @list-margin;
+    margin-bottom: @list-margin;
+}
+
+
+ul.app-description {
+    list-style-type: none;
+    font-size: @list-font-size;
+}
+
+
+ul.app-description li {
+    margin-top: @list-margin;
+    margin-bottom: @list-margin;
+}
+
+
+#ios_app_store_icon,
+#mac_app_store_icon {
+    float: none !important;
+    text-align: center;
+    display: block;
+    margin: 12px auto;
+}
+
+
+#app-icon,
+#app-actions {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+div.ipad_screenshot,
+div.iphone_screenshot,
+div.mac_screenshot {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+div.ipad_screenshot img,
+div.iphone_screenshot img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+
+div.mac_screenshot img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+
+/* device info */
+
+ol.help-list {
+    list-style-type: decimal;
+    margin-top: @list-margin;
+    margin-bottom: 24px;
+}
+
+
+ol.help-list li {
+    margin-bottom: 12px;
+    font-family: @text-font;
+    font-size: @list-font-size;
+}
+
+
+/* faq */
+
+.faq-section h1,
+.faq-section h2,
+.faq-section h3,
+.faq-section h4,
+.faq-section h5,
+.faq-section h6 {
+    margin-top: 20px;
+}
+
+
+/* release info */
+
+div.release-current,
+div.release-outdated,
+div.release-beta {
+    margin-top: 24px;
+    padding: 12px;
+    -webkit-background-clip: border-box;
+    -moz-background-clip: border;
+    background-clip: border-box;
+    font-size: 18px;
+    line-height: 1.8;
+    font-family: @heading-font !important;
+}
+
+
+div.release-current {
+    background: rgb(220, 234, 220);
+    background: rgba(0, 128, 0, 0.1);
+}
+
+
+div.release-outdated {
+    background: rgb(237, 214, 211);
+    background: rgba(128, 0, 0, 0.1);
+}
+
+
+div.release-beta {
+    background: rgb(219, 217, 230);
+    background: rgba(0, 0, 128, 0.1);
+}
+
+
+div.release-current span,
+div.release-outdated span,
+div.release-beta span {
+    font-weight: bold;
+    color: @text-color;
+}
+
+
+div.colorkey {
+    margin-top: 12px;
+}
+
+
+span.key {
+    padding-right: 1em;
+    text-indent: -.7em;
+}
+
+
+span.red:before {
+    content: "█ ";
+    color: rgb(237, 214, 211);
+}
+
+
+span.green:before {
+    content: "█ ";
+    color: rgb(220, 234, 220);
+}
+
+
+span.blue:before {
+    content: "█ ";
+    color: rgb(219, 217, 230);
+}
+
+
+/* main page app preview */
+
+div.app-preview {
+    min-height: 150px;
+    margin-bottom: 36px !important;
+    margin-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+div.app-preview img.frontpage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+div.app-preview-screenshot {
+    margin: 6px 0;
+}
+
+
+div.app-preview-screenshot img {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+
+div.app-preview-text {
+    margin-top: 12px;
+}
+
+
+div.app-preview-text p a,
+div.app-preview-text p a:visited {
+    font-weight: normal;
+}
+
+
+div.app-preview-text p a:hover {
+    text-decoration: underline;
+}
+
+
+div.app-preview-image {
+    margin: 0 auto;
+    text-align: center;
+}

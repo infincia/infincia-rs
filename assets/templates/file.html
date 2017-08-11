@@ -1,0 +1,16 @@
+{% include "header.html" %}
+        <div class="col-md-8 page-section">
+            <a href="/files/download/{{file.name}}"><h3 class="featurette-heading"><i class="fa fa-cloud-download"></i>  Download File</h3></a>
+
+            <div class="file-download-key">Filename: <span class="file-download-value">{{file.name}}</span></div>
+            <div class="file-download-key">Size: <span class="file-download-value">{{file.length|format_number }}</span></div>
+            <div class="file-download-key">SHA256: <span class="file-download-value">{{file.sha256}}</span></div>
+            <div class="file-download-key">Date: <span class="file-download-value">{{file.date|to_est_full }}</span></div>
+            <div class="file-download-key">File type: <span class="file-download-value">{{file.mime_type}}</span></div>
+            <div class="file-download-key">Description: <span class="file-download-value">{{file.description|lower}}</span></div>
+			<br>
+			<div class="horizontal-line"></div>
+
+		</div>
+		
+{% include "footer.html" %}

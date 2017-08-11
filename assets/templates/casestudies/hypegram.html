@@ -1,0 +1,99 @@
+{% include "header.html" %}
+    <div class="row">
+        <div class="col-md-12">
+          <a href="/consulting"><h3 class="featurette-heading"><i class="fa fa-check-square-o"></i>  Consulting</h3></a>
+          <a href="/case-studies/hypegram"><h3 class="featurette-heading">Case study: Hypegram <span class="text-muted">for OS X</span></h3></a>
+        </div>
+    </div>
+    <div class="row">
+    
+        <div class="col-md-5">
+            <p class="lead">Hypegram was the first native OS X client for the <a href="http://hypem.com/popular">Hype Machine</a> music streaming and discovery service.</p>
+            
+        </div>
+        
+        <div class="col-md-7">
+            <img style="padding-top:12px;" class="featurette-image img-responsive" src="/assets/images/casestudies/hypegram/hypegram-osx.png" alt="Hypegram for OS X">
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">The original Windows version</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <p>Hypegram was already a widely used Windows application before we were brought on to create the Mac version.</p>
+            
+            <p>The custom design, such as the leather window decoration, the playback controls, the button iconography, backgrounds and overlays were all ready to go when the project started.</p>
+            
+            <p>In fact the design and basic feature set were firm requirements of the contract; the Mac version had to be a faithful port of the Windows version, with exceptions only for platform integration, and to make it feel like a first class Mac application.</p>
+            
+            
+        </div>
+        
+        <div class="col-md-7">
+            <img class="featurette-image img-responsive" src="/assets/images/casestudies/hypegram/hypegram-windows.png" alt="Hypegram for Windows">
+        </div>
+        
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Technical details</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        
+            <p>Twitter’s UI framework for OS X, TwUI, was chosen to write most of the UI components. This made the overall application architecture cleaner, more maintainable, and assisted in meeting the project deadline. Core Animation rendering, iOS style table views, and various other TwUI features both saved development time and made the entire application feel responsive.</p>
+        
+            <p>A number of operating system features that became available in OS X 10.7 were utilized to make Hypegram feel like a first class citizen of the platform, such as the native Twitter account integration for tweeting links to songs and full screen mode. In addition, the app uses native window controls, native scroll bars, the OS X keychain (for Hype Machine account storage), as well as iTunes integration for purchasing songs the user discovers through the Hype Machine service.</p>
+
+            <p>An in-app analytics solution to track a variety of user actions was needed, and only a small number of existing services were available for that purpose. The client wanted all data to be kept in Google Analytics, so a custom Objective-C Framework was written to target the Google Analytics API.</p>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Challenges</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            
+            <p>The original Hypegram was a Windows application, but the source code for it was not available during the course of porting it to OS X. This prevented us from using the code as a reference, but did not introduce any significant delay in the development process. None of the original user interface code could have been reused anyway, and the rest was primarily API interaction with Hype Machine. The released, binary version of the original app was used as a reference for getting the behavior of the OS X version to match.</p>
+            <p>Working with 3rd party APIs outside our control always comes with the risk of introducing problems we can't solve ourselves. A number of these sorts of API issues came up during development, some cosmetic but ultimately impossible to work around, others functional and manageable from within the app.</p>
+            
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Final notes</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        
+            <p>Hypegram for OS X was widely covered by high profile journalist sites, like <a href="http://lifehacker.com/5981974/hypegram-for-mac-brings-the-sites-great-music-to-your-desktop-in-a-simple-elegant-player">Lifehacker</a>, <a href="http://www.theverge.com/2012/12/10/3752366/hypegram-app-os-x-streaming-music-discovery">The Verge</a>, and a number of others.</p>
+            
+            <p><a href="http://mac.appstorm.net/reviews/music-reviews/put-hype-machine-on-your-desktop-with-hypegram/">Mac App Storm</a> rated it 8/10, users on the Mac App Store gave it a 4.5/5 rating and very favorable reviews.</p>
+
+            <p>The finished OS X port of Hypegram actually had smoother user interactions and animations, and was generally more responsive than the original Windows version, partly because of inherent advantages working with high quality application frameworks like TwUI, but also due to technical choices and optimizations during development.</p>
+            
+            
+
+        </div>
+
+    </div>
+
+
+{% include "footer.html" %}

@@ -1,0 +1,115 @@
+{% include "admin/header.html" %}
+
+{% if newpost %}
+
+<script type="text/javascript">
+    console.log("edit module loading create panels...");
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("edit module loaded");
+        Infincia.initPostEdit(true);
+    });
+</script>
+
+{% else %}
+
+<script type="text/javascript">
+    console.log("edit module loading update panels...");
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("edit module loaded");
+        Infincia.initPostEdit(false);
+    });
+</script>
+
+{% endif %}
+
+
+<div class="mdl-grid post-edit-panel">
+
+    <div class="mdl-cell--4-col mdl-grid">
+
+        <div class="mdl-cell--12-col admin-card-wide"
+             id="application">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input"
+                       name="titleField"
+                       id="titleField"
+                       value="{% if post.title %}{{post.title}}{% endif %}">
+                <label class="mdl-textfield__label"
+                       for="titleField">Title</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <textarea class="mdl-textfield__input"
+                          type="text"
+                          rows="5"
+                          cols="30"
+                          id="descriptionBox"
+                          name="descriptionBox">{% if post.description %}{{post.description}}{% endif %}</textarea>
+                <label class="mdl-textfield__label"
+                       for="descriptionBox">Description</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input"
+                       name="urlField"
+                       id="urlField"
+                       value="{% if post.url %}{{post.url}}{% endif %}">
+                <label class="mdl-textfield__label"
+                       for="urlField">URL</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <label class="mdl-textfield__label"
+                       for="tagBox">Tags</label>
+                <select name="tagBox"
+                        id="tagBox"
+                        class="mdl-textfield__input"
+                        data-initial-tags="{% if post.tag_list %}{% for tag in post.tag_list %} {{ tag }} {% endfor %}{% endif %}"
+                        multiple></select>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input"
+                       name="createdBox"
+                       id="createdBox"
+                       value="{% if post.date %}{{post.date|to_est_full }}{% endif %}"
+                       readonly>
+                <label class="mdl-textfield__label"
+                       for="createdBox">Created</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input"
+                       name="updatedBox"
+                       id="updatedBox"
+                       value="{% if post.updated %}{{post.updated|to_est_full }}{% endif %}"
+                       readonly>
+                <label class="mdl-textfield__label"
+                       for="updatedBox">Updated</label>
+            </div>
+
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                   for="publishedCheckbox">
+                <input type="checkbox"
+                       id="publishedCheckbox"
+                       name="publishedCheckbox"
+                       class="mdl-switch__input"
+                       {% if post and post.published %}checked{% endif %}>
+                <span class="mdl-switch__label">Published</span>
+            </label>
+        </div>
+    </div>
+    <div class="mdl-cell--8-col mdl-grid">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--multiline editor-box">
+            <textarea class="mdl-textfield__input"
+                      type="text"
+                      rows="40"
+                      cols="40"
+                      id="postBox"
+                      placeholder="Post content"
+                      name="postBox">{% if post.content %}{{post.content}}{% endif %}</textarea>
+            <label class="mdl-textfield__label"
+                   for="postBox">Post</label>
+        </div>
+    </div>
+</div>
+{% include "admin/footer.html" %}

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowUnusedLabels": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "types": ["node", "material-design-lite", "highcharts"],
+    "outDir": "./build/scripts"
+  },
+  "files": [
+    "./assets/scripts/infincia.ts"
+  ]
+}

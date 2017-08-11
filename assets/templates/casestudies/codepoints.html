@@ -1,0 +1,79 @@
+{% include "header.html" %}
+    <div class="row">
+        <div class="col-md-12">
+          <a href="/consulting"><h3 class="featurette-heading"><i class="fa fa-check-square-o"></i>  Consulting</h3></a>
+          <a href="/case-studies/codepoints"><h3 class="featurette-heading">Case study: Codepoints <span class="text-muted">for OS X</span></h3></a>
+        </div>
+    </div>
+    <div class="row">
+    
+        <div class="col-md-5">
+            <p class="lead">Codepoints is a Mac utility for quickly accessing any Unicode character from anywhere on the system, written to be keyboard friendly and easy to use.</p>
+            
+        </div>
+        
+        <div class="col-md-7">
+            <img style="padding-top:12px;" class="featurette-image img-responsive" src="/assets/images/casestudies/codepoints/codepoints-stars.jpeg" alt="Codepoints for OS X">
+        </div>
+        
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Technical details</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        
+            <p>Codepoints is designed to have a very simple but high performance user interface, made possible by the components working under the hood to provide live search results and smooth scrolling.</p>
+            <p>The entire Unicode 6.1 database is included in the app, and the entire thing must be searchable, keyword by keyword in a drill-down fashion, as fast as the user can type. To accomplish this, the entire database is organized and loaded in to an NSArray, and bound to an NSArrayController. Realtime searching is accomplished by setting an NSPredicate on the NSArrayController.</p>
+            <p>Codepoints also needed to be available quickly without having to grab the mouse, so a global hotkey can be set by the user.</p>
+            <p>The live updating list is a view-based NSTableView, optimized for speed as much as possible. The gradient background is cached and redrawn, and there are some optimizations applied to the codepoint display as well.</p>
+            <p>The look and feel of the app is distinctive and makes use of libraries like MAAttachedWindow and BGHudKit, along with some custom drawing code.</p>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Challenges</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+            <p>Codepoints does not handle rendering of Unicode codepoint glyphs directly, leaving that task to the system instead. As a result, it depends heavily on the fonts installed on the system. Because OS X does not come with a full set of Unicode fonts covering the entire range, some codepoint glyphs simply cannot be rendered at all. 3rd party fonts, like GNU Unifont and several commercial options are available to solve this problem, but cannot be included with the app due to licensing restrictions.</p>
+            <p>In some cases if a user has disabled one of the important system fonts like Arial Unicode MS or Apple Color Emoji, Codepoints can no longer render a preview of a large number of codepoint glyphs. The only solution in that case is to detect if those fonts are disabled and warn the user.</p>
+            <p>Some users had intentionally installed very old fonts dating from the OS X 10.2 era. Some of these fonts did not provide full information about what they were (name, description), which caused some crashes early after Codepoints was released. An update had to be released to deal with some of these situations.</p>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Final notes</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        
+            <p>Codepoints has always been fairly popular with a wide variety of users for a wide range of purposes, from simple things like acccess to copyright and trademark symbols, foreign currency, mathematic notation, greek lettering and so on.</p>
+            
+            <p>Shortly after release, Codepoints repeatedly hit <a href="/files/download/codepoints-topten.jpg">top 10 spots</a> on the Mac App Store.</p>
+            
+            <p>You can read more about it on the <a href="/apps/codepoints">product page</a>.</p>
+
+            
+            
+
+        </div>
+
+    </div>
+
+
+{% include "footer.html" %}

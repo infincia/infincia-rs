@@ -1,0 +1,82 @@
+/* Infincia, Copyright 2011-2017 Stephen Oliver */
+
+@import "variables";
+
+#infinciaheader {
+    background: none;
+    min-height: 120px;
+
+}
+
+
+#logo {
+    display: block;
+    margin-top: 44px;
+    font-family: @heading-font;
+    font-size: 28px;
+    font-weight: bold;
+    color: @text-color;
+}
+
+
+#linkbar {
+    height: 40px;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 6px;
+    margin-top: 12px;
+    list-style: none;
+
+    li {
+        margin-bottom: 0;
+        list-style: none;
+        height: 30px;
+        padding-left: 12px;
+        padding-right: 0;
+        display: inline-block;
+
+        a,
+        a:visited {
+            font-size: 20px;
+            display: inline-block;
+            font-family: @heading-font;
+            color: @text-color;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    li.first {
+        padding-left: 0;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    #linkbar {
+        margin-top: 46px;
+        text-align: right;
+    }
+
+}
+
+
+@media (min-width: 992px) {
+    #linkbar {
+        margin-top: 46px;
+        text-align: right;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+
+    #linkbar {
+        margin-bottom: 6px;
+        margin-top: 46px;
+        text-align: right;
+    }
+}

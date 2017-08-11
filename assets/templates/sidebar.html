@@ -1,0 +1,49 @@
+
+<div class="col-md-4 page-section">
+    <div class="row ">
+        <div class="col-md-12 ">        
+            <a href="/apps"><h3 class="featurette-heading"><i class="fa fa-fw fa-apple"></i>Apps</h3></a>
+            <ul class="list-unstyled hidden-xs hidden-sm sidebar">
+                <li><a class="item-title" href="/apps/mi-fi-monitor-ios">Mi-Fi Monitor for iOS</a></li>
+                <li><a class="item-title" href="/apps/mi-fi-monitor-mac">Mi-Fi Monitor for OS X</a></li>
+                <li><a class="item-title" href="/apps/codepoints">Codepoints</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 ">
+            <a href="/contact"><h3 class="featurette-heading"><i class="fa fa-fw fa-envelope"></i>Contact</h3></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 ">
+            <a href="http://facebook.com/infincia"><h3 class="featurette-heading"><i class="fa fa-fw fa-facebook-square"></i>Facebook</h3></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 ">
+            <a href="http://twitter.com/infincia"><h3 class="featurette-heading"><i class="fa fa-fw fa-twitter-square"></i>Twitter</h3></a>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-12 ">
+            <a href="/blog"><h3 class="featurette-heading"><i class="fa fa-fw fa-rss"></i>Blog</h3></a>
+            <ul class="list-unstyled hidden-xs hidden-sm sidebar">
+            {% for post in posts %}
+                <li><a class="item-title" href="/blog/{{post.url}}">{{ post.title }}</a></li>
+            {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-12 ">
+            <a href="/code"><h3 class="featurette-heading"><i class="fa fa-fw fa-code"></i>Open Source</h3></a>
+            <ul class="list-unstyled hidden-xs hidden-sm sidebar">
+            {% for repo in repositories %}
+                <li><a class="item-title" href="{{repo.html_url}}">{{repo.name}}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{
+  "name": "infincia",
+  "version": "1.0.0",
+  "main": "infincia.js",
+  "repository": "https://github.com/infincia/infincia-rs",
+  "author": "Stephen Oliver <steve@infincia.com>",
+  "license": "MIT",
+  "dependencies": {
+    "highcharts": "^4.0.0",
+    "material-design-lite": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/highcharts": "^4.0.0",
+    "@types/material-design-lite": "^1.1.14",
+    "@types/node": "^8.0.22",
+    "babel-cli": "*",
+    "babel-preset-es2015": "*",
+    "less": "*",
+    "less-plugin-clean-css": "^1.1.14",
+    "rimraf": "^2.2.8",
+    "typescript": "^2.4.0",
+    "uglify-es": "*",
+    "webpack": "^3.5.3"
+  },
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "prebuild": "npm run clean -s",
+    "build": "npm run build:images && npm run build:admincss && npm run build:css && npm run build:material-design-lite-theme-css && npm run build:typescript && npm run build:scripts ",
+    "build:material-design-lite-theme-css": "cp node_modules/material-design-lite/dist/material.cyan-light_blue.min.css ./dist/css/",
+    "build:images": "cp -a ./assets/images ./dist/",
+    "build:typescript": "node_modules/typescript/bin/tsc",
+    "build:admincss": "node_modules/less/bin/lessc --clean-css ./assets/css/admin/infincia.less ./dist/css/admin/infincia.min.css",
+    "build:css": "node_modules/less/bin/lessc --clean-css ./assets/css/infincia.less ./dist/css/infincia.min.css",
+    "build:scripts": "webpack"
+  }
+}

@@ -1,0 +1,5 @@
+[workspace]
+members = ["libinfincia", "infinciad"]
+
+[profile.release]
+debug = true

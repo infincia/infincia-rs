@@ -1,0 +1,207 @@
+/* Infincia, Copyright 2011-2017 Stephen Oliver */
+@import "variables";
+
+
+.gist {
+    margin-top: 36px;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+.twitter-share-button {
+    margin-top: 6px;
+}
+
+
+.postlist-item {
+    margin-bottom: 36px;
+    margin-top: 36px;
+    position: relative;
+    min-height: 136px;
+}
+
+
+.postlist-item h1,
+.postlist-item h2,
+.postlist-item h3,
+.postlist-item h4,
+.postlist-item h5,
+.postlist-item h6 {
+
+    margin-top: 24px;
+    font-family: @text-font;
+}
+
+
+.postlist-item .post-title {
+    margin-bottom: 6px;
+}
+
+
+.postlist-item .post-title a {
+    text-decoration: none;
+    color: @text-color;
+    font-size: 26px;
+    font-weight: normal;
+    font-family: @text-font;
+    line-height: 26px;
+}
+
+
+.postlist-item .post-title a:hover {
+    text-decoration: underline !important;
+}
+
+
+.postlist-item .post-date {
+    color: @text-color;
+    text-transform: uppercase;
+    margin: 12px 0;
+    font-weight: normal;
+    font-family: @text-font;
+    font-size: @post-metadata-size !important;
+}
+
+
+.postlist-item .post-owner {
+    color: @text-color;
+    margin: 12px 0;
+    font-weight: normal;
+    font-family: @text-font;
+    font-size: @post-metadata-size !important;
+}
+
+
+.postlist-item .post-date [class^="fa fa-"],
+.postlist-item .post-date [class*=" fa fa-"],
+.postlist-item .post-owner [class^="fa fa-"],
+.postlist-item .post-owner [class*=" fa fa-"] {
+    color: @text-color;
+}
+
+
+.postlist-item .post-owner {
+
+}
+
+
+.postlist-item .post-owner .avatar {
+    height: @avatar-size;
+    width: @avatar-size;
+    background: url("/assets/images/avatar-32.jpg") no-repeat 50%;
+    border-radius: 50%;
+}
+
+
+.postlist-item .post-owner .name {
+    height: 32px;
+}
+
+
+.postlist-item .post-content p {
+    color: @text-color;
+}
+
+
+.postlist-item .post-content {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    word-wrap: break-word;
+
+}
+
+
+.postlist-item .post-content img {
+
+    -moz-border-radius: @border-radius;
+    -webkit-border-radius: @border-radius;
+    border-radius: @border-radius;
+    -moz-box-shadow: @shadow;
+    -webkit-box-shadow: @shadow;
+    box-shadow: @shadow;
+    margin: 12px auto;
+    display: block;
+}
+
+
+.postlist-item .post-readmore {
+    font-weight: normal;
+    color: #4183C4;
+    text-decoration: none;
+}
+
+
+.postlist-item .post-readmore a {
+    text-decoration: none;
+}
+
+
+.postlist-item img {
+    max-width: 100%;
+}
+
+
+.postlist-item div {
+
+}
+
+
+.postlist-item ul {
+    padding-top: 12px;
+    list-style-type: none;
+    font-family: @text-font;
+    padding-left: 12px;
+}
+
+
+.postlist-item ul li {
+    padding-left: 12px;
+    margin-bottom: 6px;
+
+}
+
+
+.postlist-item ul li:before {
+    content: "✓ ";
+}
+
+
+/* tags */
+
+.tag-hash,
+.tag-hash:visited,
+.tag-hash:hover {
+    margin-right: 6px;
+    margin-bottom: 2px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: @text-color;
+    font-weight: normal;
+    font-family: @text-font;
+    font-size: @post-metadata-size !important;
+}
+
+
+.tag-hash:before {
+    content: "#";
+    text-transform: uppercase;
+}
+
+
+.tag-pill,
+.tag-pill:visited,
+.tag-pill:hover {
+    margin-bottom: @tag-margin;
+    margin-top: @tag-margin;
+    margin-right: @tag-margin;
+    position: relative;
+    padding: 0 12px;
+    display: inline-block;
+    color: @text-color;
+    white-space: nowrap;
+    border: 1px solid @outline-color;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+}

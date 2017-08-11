@@ -1,0 +1,111 @@
+{% include "header.html" %}
+    <div class="row">
+        <div class="col-md-12">
+          <a href="/consulting"><h3 class="featurette-heading"><i class="fa fa-check-square-o"></i>  Consulting</h3></a>
+          <a href="/case-studies/slotsrace"><h3 class="featurette-heading">Case study: Slots Race <span class="text-muted">for iOS</span></h2></a>
+        </div>
+    </div>
+    <div class="row">
+    
+        <div class="col-md-6">
+            <p class="lead">Slots Race is a realtime, global multi-player slot machine game for iOS. Players join a team in one of multiple themed races, and compete with both the opposing team and each other until each race ends.</p>
+            
+        </div>
+        
+        <div class="col-md-6">
+            <img style="padding-top:12px;" class="featurette-image img-responsive" src="/assets/images/casestudies/slotsrace/slotsrace-holiday.png" alt="Slots Race Holiday Race">
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Game Design</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>The game is a traditional slot machine in most respects. There are 5 slot reels, multiple paylines, and the player can choose how much they're willing to bet on each spin, which gets multiplied by the number of paylines they've selected. When the player wins, their chips are added back to their account.</p>
+            <p>However, the game has a twist: you're not only playing for yourself, you're actually part of a team playing against another team in a race. When you win, your chips are also added to your teams score for the race. When the race ends, whichever team has a higher score is the winnner that week.</p>
+            <p>So rather than being an isolated game experience, it's a realtime, global, multi-player social game.</p>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Multiple Races</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <p>Slots Race was originally released with just one race: East vs. West. However, the 2012 Presidential election was just around the corner so the game was updated to support multiple races, starting with Barack Obama vs. Mitt Romney.</p>
+            
+            <p>Soon after, the holidays brought another race, Rudolph the red nosed reindeer vs. Frosty the snowman.</p>
+            
+            <p>Players were given the choice of which races to join and could ignore the rest. In addition they could switch teams in the middle of a race, but abandoning your team came with a cost: your score for that race reset to zero.</p>
+            
+            
+        </div>
+        <div class="col-md-5">
+            <img style="padding-top:12px;" class="featurette-image img-responsive" src="/assets/images/casestudies/slotsrace/slotsrace-eastwest.png" alt="Slots Race East-West Race">
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Technical details</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        
+            <p>Slots Race is built with about 80% standard UIKit components, with custom button themes and backgrounds. However the slot reels are custom components, and custom animations are used in various places.</p>
+            
+            <p>The iOS game is written entirely with Objective-C and some C, makes heavy use of blocks, Grand Central Dispatch, and uses the iOS keychain for secure player credential storage.</p>
+            
+            <p>As a global, multi-player game, Slots Race required a highly available custom backend service. The backend is written entirely with Python and uses several processes to manage different aspects of the game, including automation of the races and communicating with 3rd party services like MailChimp and Apple's push notification system.</p>
+            
+            <p>The game and backend communicate over HTTP/TLS using a stable, versioned JSON API. Stable API versions allow backward compatibiltity to be maintained when new versions of the game are released that include new features, API changes, or when changes to the backend itself are necessary.</p>
+            
+            <p>Testing showed that all API methods required very little CPU time, so a non-blocking I/O architecture could be implemented in the API processes. This allowed fewer API processes to be kept running, freeing up system RAM for other purposes. Full system testing of the API service showed that it could support concurrent traffic from a few hundred players per second, per process.</p>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Challenges</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            
+            <p>Slots Race required a highly available server backend for all gameplay. Initially, commercial app backend services were evaluated, but were found to be incapable of supporting the types of API interactions that Slots Race required. Further, they would limit development in the future when expanding the game and adding new features. A custom backend was judged to be the only viable option.</p>
+            
+            <p>Management of races in the game had to be almost entirely automated. There are specific start and end dates for each race interval, and once a race ends a winner is immediately declared. To ensure the integrity of past race results, a solution had to be found that guarded against iOS device clock differences or outright manipulation, removed timezones from the situation entirely, and prevented previous race scores from being directly manipulated by an attacker. Responsibility for deciding which race interval an incoming score should apply to was moved to the server, which neatly solved all of those issues, but heavily influenced the data model and the types of database queries that had to be written to support the API.</p>
+            
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h3 class="featurette-heading">Final notes</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        
+            <p>You can read more about it on the <a href="http://slotsrace.com/">Slots Race website</a>.</p>
+            
+
+        </div>
+
+    </div>
+
+
+{% include "footer.html" %}

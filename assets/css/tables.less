@@ -1,0 +1,103 @@
+@import "variables";
+
+
+dd {
+    margin-bottom: 24px;
+}
+
+
+.infincia-table {
+
+    margin: 12px auto;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+
+    -webkit-border-radius: @border-radius;
+    -moz-border-radius: @border-radius;
+    border-radius: @border-radius;
+
+    -webkit-background-clip: border-box;
+    -moz-background-clip: border;
+    background-clip: border-box;
+
+    width: 100%;
+}
+
+
+.infincia-table tr:nth-child(odd) {
+    background-color: rgba(232, 232, 232, 0.3);
+}
+
+
+.infincia-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.infincia-table tr.table-header {
+
+    -webkit-background-clip: border-box;
+    -moz-background-clip: border;
+    background-clip: border-box;
+    -webkit-border-top-left-radius: @border-radius;
+    -webkit-border-top-right-radius: @border-radius;
+    -moz-border-radius-topleft: @border-radius;
+    -moz-border-radius-topright: @border-radius;
+    border-top-left-radius: @border-radius;
+    border-top-right-radius: @border-radius;
+
+    font-size: 16px;
+    line-height: 1.8;
+    font-family: @heading-font;
+    border-bottom: 1px solid #CCCCCC;
+    font-weight: bold;
+    background: rgb(219, 217, 230);
+    background: rgba(0, 0, 128, 0.1);
+}
+
+
+.infincia-table tr th,
+.infincia-table tr td {
+    padding-top: @paragraph-padding;
+    padding-bottom: @paragraph-padding;
+}
+
+
+.infincia-table tr td:first-child,
+.infincia-table tr th:first-child {
+    padding-left: 18px;
+
+}
+
+
+.infincia-table tr td.left,
+.infincia-table tr th.left {
+    text-align: left !important;
+}
+
+
+.infincia-table tr td.value {
+    text-align: center;
+}
+
+
+.infincia-table tr th {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.infincia-table tr th.first {
+    text-align: left !important;
+    -webkit-border-top-left-radius: @border-radius;
+    -moz-border-radius-topleft: @border-radius;
+    border-top-left-radius: @border-radius;
+}
+
+
+.infincia-table tr th.last {
+    -webkit-border-top-right-radius: @border-radius;
+    -moz-border-radius-topright: @border-radius;
+    border-top-right-radius: @border-radius;
+}

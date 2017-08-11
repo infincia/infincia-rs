@@ -1,0 +1,118 @@
+<div class="col-md-6 col-sm-6  page-section">
+
+	<h3><i class="fa fa-fw fa-signal"></i>Supported Devices</h3>
+
+		<p>Most devices made by Novatel Wireless should work, but some carriers have modified the firmware on their branded Mi-Fi models to disable the OpenCGI API. See the FAQ for more information.</p>
+                
+        <p>If you don't see your device listed in the table below, it means it simply hasn't been tested yet. You can test it with these easy steps (note: these links will open a new tab):</p>
+        
+        <ol class="fa-ul help-list">
+            <li><i class="fa fa-li"></i>Make sure your iPhone, iPad or Mac is connected to the Mi-Fi</li>
+            <li><i class="fa fa-li"></i>Load the Mi-Fi web interface at the default IP address: <a target="_blank" href="http://192.168.1.1">192.168.1.1</a></li>
+            <li><i class="fa fa-li"></i>If you don't see the web interface, the IP address of your device may have been changed. Send us a <a target="_blank" href="/contact">support request</a> and we will be happy to assist you</li>
+            <li><i class="fa fa-li"></i>Once you've verified that the web interface works, click the link below. It should load a page with a string of words like WwNetwkName, indicating that your Mi-Fi should be supported</li>
+            <li><i class="fa fa-li"></i><a target="_blank" href="http://192.168.1.1/getStatus.cgi?dataType=TEXT">Check for OpenCGI support</a></li>
+        </ol>
+
+        <!-- <p>If you don't see your device listed below, feel free to run a test right now in your browser to see if your MiFi is compatible.<p>
+
+        <p>Before you run the test, please read the following instructions:</p>
+
+        <h3 id="mifi-test-header">MiFi Compatibility Test</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <form id="testform" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="mifi_address">MiFi IP Address</label>
+                        <div class="col-md-4">
+                            <input id="mifi_address" name="mifi_address" type="text" placeholder="192.168.1.1" class="form-control input-md">
+                                <span class="help-block">Your MiFi IP address</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div id="buttons">
+            <button type="button" id="testbutton" class="btn btn-primary btn-custom" data-loading-text="Testing..." onclick="testMiFi();">Test</button>
+        </div>
+        <br>
+        <div id="error" class="alert alert-danger alert-custom"></div> -->
+
+
+			<table class="infincia-table" id="mifi" border="0">
+				<tr class="table-header">
+					<th class="first">Device</th>
+					<th class="last" >Supported</th>
+					<!-- <th>GPS Location</th> -->
+				</tr>
+				
+				<tr>
+					<td>Novatel Mi-Fi 2200</td>
+					<td class="value">Yes</td>
+					<!--<td class="value">Some</td>-->
+				</tr>
+				<tr>
+					<td>Novatel Mi-Fi 2352</td>
+					<!--<td class="value">Yes</td>-->
+					<td class="value">Some*</td>
+				</tr>
+				<tr>
+					<td>Novatel Mi-Fi 2372</td>
+					<!--<td class="value">Yes</td>-->
+					<td class="value">Some*</td>
+				</tr>
+				<tr>
+					<td>Novatel Mi-Fi 3352</td>
+					<!--<td class="value">Yes</td>-->
+					<td class="value">Some*</td>
+				</tr>
+				<tr>
+					<td>Novatel Mi-Fi 3372</td>
+					<!--<td class="value">Yes</td>-->
+					<td class="value">Some*</td>
+				</tr>
+				<tr>
+					<td>Novatel Mi-Fi 4082</td>
+					<td class="value">Yes</td>
+					<!--<td class="value">Some</td>-->
+				</tr>
+				<tr>
+					<td>Novatel Mi-Fi 4510</td>
+					<td class="value">Yes</td>
+					<!--<td class="value">Some</td>-->
+				</tr>
+                <tr>
+                    <td>Novatel Mi-Fi 4620</td>
+                    <td class="value">Yes</td>
+                    <!--<td class="value">Some</td>-->
+                </tr>
+                <tr>
+                    <td>Novatel Mi-Fi 6620</td>
+                    <!--<td class="value">Yes</td>-->
+                    <td class="value">Some*</td>
+                </tr>
+                <tr>
+					<td>Huawei hotspots</td>
+					<td class="value">No</td>
+					<!--<td class="value">Some</td>-->
+				</tr>
+                <tr>
+					<td>Samsung hotspots</td>
+					<td class="value">No</td>
+					<!--<td class="value">Some</td>-->
+				</tr>
+                <tr>
+					<td>Verizon Fivespot</td>
+					<td class="value">No</td>
+					<!--<td class="value">Some</td>-->
+				</tr>
+			</table>
+		
+		<p>* These are devices where the wireless carrier might have disabled the OpenCGI API, or that might require a firmware update in order to work with Mi-Fi Monitor. Check the firmware section on this page for more information.</p>
+
+
+
+
+
+</div>

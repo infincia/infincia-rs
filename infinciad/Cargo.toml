@@ -1,0 +1,20 @@
+[package]
+name = "infinciad"
+version = "0.1.0"
+authors = ["Stephen Oliver <steve@infincia.com>"]
+build = "build.rs"
+workspace = ".."
+
+[dependencies]
+clap = "*"
+log = "*"
+prettytable-rs = "*"
+simplelog = "*"
+crossbeam = "*"
+
+
+[dependencies.libinfincia]
+path = "../libinfincia"
+
+[[bin]]
+name = "infinciad"

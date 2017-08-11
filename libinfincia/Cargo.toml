@@ -1,0 +1,52 @@
+[package]
+name = "libinfincia"
+version = "0.1.0"
+authors = ["Stephen Oliver <steve@infincia.com>"]
+build = "build.rs"
+workspace = ".."
+
+[dependencies]
+log = "*"
+chrono = { version = "*", features = ["serde"] }
+chrono-humanize = "*"
+number_prefix = "*"
+rocket = "0.3.1"
+rocket_codegen = "0.3.1"
+diesel = { version = "*", features = ["postgres", "chrono"] }
+diesel_codegen = { version = "*", features = ["postgres"] }
+dotenv = "*"
+r2d2 = "*"
+r2d2-diesel = "*"
+lazy_static = "*"
+tera = "*"
+serde = "*"
+serde_derive = "*"
+serde_json = "*"
+walkdir = "*"
+parking_lot = "*"
+pulldown-cmark = "*"
+crossbeam = "*"
+mime-sniffer = "*"
+rust-crypto = "*"
+ring = "*"
+multipart = "*"
+rand = "*"
+image = "*"
+futures = "0.1"
+hyper = "0.11"
+hyper-tls = "*"
+
+tokio-core = "0.1"
+error-chain = "^0.10.0"
+url = "*"
+sys-info = "*"
+
+[dependencies.rocket_contrib]
+version = "*"
+default-features = false
+features = ["tera_templates", "json"]
+
+[lib]
+name = "infincia"
+crate-type = ["lib", "staticlib", "cdylib"]
+doctest = false

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="description"
+          content="">
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=UTF-8">
+    <meta name="author"
+          content="Infincia">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet"
+          href="//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+
+    <link rel="stylesheet"
+          href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet"
+          href="/assets/css/material.cyan-light_blue.min.css">
+
+    <link rel="stylesheet"
+          href="/assets/css/tokenize2.css">
+
+    <link rel="stylesheet"
+          href="/assets/css/admin/infincia.min.css">
+
+    <script
+            src="/assets/scripts/infincia.bundle.js"></script>
+</head>
+<body>
+<div class="admin-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="admin-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">{{title}}</span>
+            <div class="mdl-layout-spacer"></div>
+
+            {% if users_selected %}
+            <button type="button"
+                    id="add-user-button"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                    name="add-user">
+                <i class="material-icons">add</i>
+                Add user
+            </button>
+            {% endif %}
+
+            {% if newpost %}
+            <button type="button"
+                    id="create-post-button"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                    name="create-post">Create
+            </button>
+            {% elif editpost %}
+            <button type="button"
+                    id="update-post-button"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                    name="update-post"
+                    data-post-id="{{post.id}}">Update
+            </button>
+            {% elif posts_selected %}
+            <button id="add-post-button"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">add</i>Add post
+            </button>
+            {% endif %}
+
+
+            {% if files_selected %}
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input"
+                       name="file-name-field"
+                       id="file-name-field"
+                       readonly/>
+                <label class="mdl-textfield__label"
+                       for="file-name-field">
+                    Upload a file
+                </label>
+            </div>
+
+            <form name="file"
+                  id="file-upload-form"
+                  method="post"
+                  enctype="multipart/form-data">
+                <div id="select-file-button"
+                     class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                    <input type="file"
+                           name="file"
+                           id="file-input">
+                    <i class="material-icons">attach_file</i>
+                    <span class="mdl-tooltip"
+                          data-mdl-for="select-file-button">Select file</span>
+                </div>
+                <button name="upload"
+                        id="upload-file-button"
+                        class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                    <i class="material-icons">file_upload</i>
+                    <span class="mdl-tooltip"
+                          data-mdl-for="upload-file-button">Start upload</span>
+
+                </button>
+            </form>
+            {% endif %}
+        </div>
+    </header>
+    <div class="admin-notification-center mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="admin-notification-center-header">
+            {% if user %}
+            <ul class="demo-list-control mdl-list mdl-cell--12-col">
+                <li class="mdl-list__item mdl-list__item--two-line">
+                            <span class="mdl-list__item-primary-content">
+                                <img src="/assets/images/avatars/avatar.jpg"
+                                     class="mdl-list__item-avatar">
+                                <span class="user-name">{{user.name}}</span>
+                                <span class="mdl-list__item-sub-title user-email">{{user.email}}</span>
+
+                            </span>
+                </li>
+            </ul>
+            {% endif %}
+        </header>
+        <nav class="admin-notification-center-navigation mdl-navigation mdl-color--blue-grey-800">
+            {% if user %}
+            <a class="mdl-navigation__link"
+               href="/admin"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                role="presentation">home</i>Dashboard</a>
+            <a class="mdl-navigation__link"
+               href="/admin/files"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                      role="presentation">inbox</i>Files</a>
+            <a class="mdl-navigation__link"
+               href="/admin/posts"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                      role="presentation">forum</i>Posts</a>
+            <a class="mdl-navigation__link"
+               href="/admin/users"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                      role="presentation">account_circle</i>Users</a>
+
+            <a class="mdl-navigation__link"
+               href="/"><i class="mdl-color-text--blue-grey-400 material-icons"
+                           role="presentation">exit_to_app</i>Public site</a>
+
+            {% endif %}
+
+
+            <div class="mdl-layout-spacer"></div>
+            {% if user %}
+            <a class="mdl-navigation__link"
+               href="/admin/logout">
+                <i class="mdl-color-text--blue-grey-400 material-icons"
+                   role="presentation">power_settings_new</i>
+                Logout
+            </a>
+            {% else %}
+            <a class="mdl-navigation__link"
+               href="/admin/login">
+                <i class="mdl-color-text--blue-grey-400 material-icons"
+                   role="presentation">power_settings_new</i>
+                Login
+            </a>
+            {% endif %}
+        </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+

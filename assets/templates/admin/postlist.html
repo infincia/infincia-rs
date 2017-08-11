@@ -1,0 +1,60 @@
+{% include "admin/header.html" %}
+
+<script type="text/javascript">
+    console.log("post list module loading...");
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("post list module loaded");
+
+        Infincia.initPostList();
+    });
+</script>
+
+<div class="mdl-grid post-list-panel">
+
+    <ul class="demo-list-control mdl-list mdl-cell--12-col">
+        {% for post in posts %}
+
+        <li class="mdl-list__item mdl-list__item--two-line">
+            <span class="mdl-list__item-primary-content">
+                <span>{{post.title}}</span>
+                <span class="mdl-list__item-sub-title">{{post.date|to_est}}</span>
+            </span>
+
+            <span class="mdl-list__item-secondary-action">
+                <button class="mdl-button mdl-js-button mdl-button--icon mdl-list__item-secondary-action view-post-button"
+                        data-post-url="{{post.url}}">
+                    <i class="mdl-color-text--blue-grey-400 material-icons"
+                       role="presentation">remove_red_eye</i>
+                </button>
+                <span class="mdl-tooltip"
+                      data-mdl-for="view-post-button">View post</span>
+
+            </span>
+            <span class="mdl-list__item-secondary-action">
+                <button class="mdl-button mdl-js-button mdl-button--icon mdl-list__item-secondary-action edit-post-button"
+                        data-post-id="{{post.id}}">
+                    <i class="mdl-color-text--blue-grey-400 material-icons"
+                       role="presentation">mode_edit</i>
+                </button>
+                <span class="mdl-tooltip"
+                      data-mdl-for="edit-post-button">Edit post</span>
+
+            </span>
+            <span class="mdl-list__item-secondary-action">
+                <button class="mdl-button mdl-js-button mdl-button--icon mdl-list__item-secondary-action delete-post-button"
+                        data-post-id="{{post.id}}">
+                    <i class="mdl-color-text--blue-grey-400 material-icons"
+                       role="presentation">delete_forever</i>
+                </button>
+                <span class="mdl-tooltip"
+                      data-mdl-for="delete-post-button">Delete post</span>
+            </span>
+
+
+        </li>
+        {% endfor %}
+
+    </ul>
+</div>
+{% include "admin/footer.html" %}

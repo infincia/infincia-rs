@@ -1,0 +1,14 @@
+{% include "admin/header.html" %}
+<div class="mdl-grid tickets-panel">
+    {% for ticket in tickets %}
+    <div class="mdl-cell--12-col ticket">
+        <div class="ticket-owner">{{owner}}</div>
+        <span class="ticket-app">{{app}}</span>
+        <span class="ticket-app-version">{{version}}</span>
+        <div class="ticket-date">{{date}}</div>
+        <div class="ticket-title">{{title}}</div>
+        <div class="ticket-content">{{content}}</div>
+    </div>
+    {% endfor %}
+</div>
+{% include "admin/footer.html" %}

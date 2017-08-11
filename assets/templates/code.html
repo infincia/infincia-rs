@@ -1,0 +1,54 @@
+{% include "header.html" %}
+    <div class="row featurette">
+        <div class="col-md-8 page-section">
+            <a href="/code"><h3 class="featurette-heading"><i class="fa fa-code"></i>  Open Source</h3></a>
+            <p>All Open Source code is hosted via <a href="http://github.com/infincia">Github</a>, with a full list of public repositories embedded below. Developers are welcome to request parts of the code for other App Store applications that aren't listed below as well, just ask.</p>
+			
+            <p>The code that runs this site is written with <a href="https://www.rust-lang.org/en-US/">Rust</a> using the <a href="https://rocket.rs/">Rocket</a> framework, using <a href="">PostgreSQL</a> to provide persistent storage for blog posts and github repository information. It is Open Source under the MIT license.</p>
+
+            <div class="page-section">
+                {% for repo in repositories %}
+                <div class="github-repository">
+				
+                    <div class="repo-top">
+                        <a class="repo-author" href="https://github.com/infincia">
+                            <i class="fa fa-github-square fa-lg"></i>
+                            <span> Infincia</span>
+                        </a>
+                        <span> / </span>
+                        <a class="repo-link" href="{{ repo.html_url }}">
+                            <span>{{repo.name}}</span>
+                        </a>
+                    </div>
+                    <div class="horizontal-line"></div>
+                    <!-- <div class="repo-sub">
+                        <span class="repo-language">[[ repo.language ]]</span>
+                        <span> / </span>
+                        <span class="repo-forks">
+                            <span class="value">[[ repo.forks ]]</span>
+                            <span class="label"><i class="fa fa-code-fork"></i></span>
+                            
+                        </span>
+                    </div> -->
+                    
+                    <div class="repo-description">
+                        <p>{{repo.description}}</p>
+                        <p class="github-readmore"><a href="{{ repo.html_url }}#readme"><i class="fa fa-chevron-right"></i> Read Documentation</a></p>
+
+                    </div>
+				
+                   
+
+                    
+                </div>
+                
+                {% endfor %}
+            </div>
+		</div>
+		
+        {% include "sidebar.html" %}
+        
+    </div>
+
+    
+{% include "footer.html" %}

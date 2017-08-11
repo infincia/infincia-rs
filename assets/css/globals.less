@@ -1,0 +1,159 @@
+/* Infincia, Copyright 2011-2017 Stephen Oliver */
+@import "variables";
+
+
+@font-face {
+    font-family: 'PT Sans Narrow';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans Narrow'), local('PTSans-Narrow'), url(//themes.googleusercontent.com/static/fonts/ptsansnarrow/v5/UyYrYy3ltEffJV9QueSi4Z4t0mJKPaLVqklzZuc32b4.woff) format('woff');
+}
+
+
+@font-face {
+    font-family: 'PT Sans Narrow';
+    font-style: normal;
+    font-weight: 700;
+    src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), url(//themes.googleusercontent.com/static/fonts/ptsansnarrow/v5/Q_pTky3Sc3ubRibGToTAYnhM4mdXpoxYNWk7Ev34U70.woff) format('woff');
+}
+
+
+html {
+    background: url("/assets/images/backgrounds/bg_body.gif") repeat fixed;
+    height: 100%;
+}
+
+
+body {
+    background: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+
+img {
+    -ms-interpolation-mode: bicubic;
+    margin-bottom: 24px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: @text-color;
+    font-weight: normal;
+    font-family: @heading-font;
+}
+
+
+button {
+    font-weight: bold;
+    color: @button-text-color;
+}
+
+
+hr {
+    margin: 6px 0;
+}
+
+
+a, a:visited, a:hover {
+    text-decoration: none !important;
+    font-weight: normal;
+    color: @link-color;
+}
+
+
+p {
+    word-wrap: break-word;
+    margin: 0;
+    font-weight: normal;
+    font-size: @paragraph-font-size;
+    font-family: @text-font;
+    padding-top: @paragraph-padding;
+    padding-bottom: @paragraph-padding;
+    color: @text-color;
+}
+
+
+p.lead {
+    padding-top: 8px;
+    font-size: 18px;
+}
+
+
+@media (min-width: 768px) {
+    p.lead {
+        font-size: 18px;
+    }
+}
+
+
+ul.stars {
+    padding-left: 0;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+
+ul.stars li {
+    padding-left: 0;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+
+ul.stars li:before {
+    content: "★  ";
+}
+
+
+.icon-gray {
+    color: @text-color !important;
+}
+
+
+.btn-custom {
+    background-color: hsla(0, 0%, 0%, 0) !important;
+    background-repeat: repeat-x;
+    border-color: #AAAAAA;
+    font-weight: bold;
+    color: @button-text-color !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.00);
+    -webkit-font-smoothing: antialiased;
+    background-image: none;
+}
+
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: hsla(0, 0%, 0%, 0) !important;
+    background-position: 0;
+}
+
+
+.btn-contact {
+    font-family: @heading-font;
+    font-size: 18px;
+}
+
+
+.btn-contact:hover {
+    font-weight: bold;
+}
+
+
+.alert-custom {
+    background-image: none;
+    border-color: #AAAAAA;
+}
+
+
+#error {
+    display: none;
+}
+
+
+div.list-item {
+    margin-top: 12px;
+    margin-bottom: 24px;
+}

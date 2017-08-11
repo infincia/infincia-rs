@@ -1,0 +1,17 @@
+[Unit]
+Description=Infincia
+After=network.target
+
+[Service]
+WorkingDirectory=/
+ExecStart=/opt/infincia-rs/dist-x86_64-unknown-linux-gnu/bin/infinciad -s serve --ip 127.0.0.1 --port 12000 --workers 20 --key "$SECRET_KEY"
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+KillSignal=SIGQUIT
+ProtectSystem=full
+User=www-data
+Group=www-data
+CapabilityBoundingSet=~CAP_SYS_ADMIN
+
+[Install]
+WantedBy=multi-user.target

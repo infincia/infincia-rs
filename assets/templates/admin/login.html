@@ -1,0 +1,40 @@
+{% include "admin/header.html" %}
+
+<script type="text/javascript">
+    console.log("login module loading...");
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("login module loaded");
+
+        Infincia.initLogin();
+    });
+</script>
+
+<div class="mdl-grid login-panel">
+
+    <div class="mdl-cell--12-col">
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input"
+                   name="email"
+                   id="emailField">
+            <label class="mdl-textfield__label"
+                   for="emailField">Email</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input"
+                   type="password"
+                   name="password"
+                   id="passwordField">
+            <label class="mdl-textfield__label"
+                   for="passwordField">Password</label>
+        </div>
+
+        <button type="button"
+                id="login-button"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                name="login">Login
+        </button>
+    </div>
+</div>
+{% include "admin/footer.html" %}

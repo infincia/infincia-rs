@@ -1,0 +1,76 @@
+{% include "admin/header.html" %}
+
+<script type="text/javascript">
+    console.log("files module loading...");
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("files module loaded");
+
+        Infincia.initFileList();
+    });
+</script>
+
+<div id="file-upload-progress-bar" class="mdl-progress mdl-js-progress"></div>
+
+
+<div class="mdl-grid files-panel">
+
+    {% for file in files %}
+    <div class="admin-card-wide mdl-card file-card mdl-shadow--2dp mdl-cell--4-col">
+
+        {% if file.has_preview %}
+        <div class="mdl-card__title file-preview-section has-file-preview">
+            <img src="/files/preview/{{file.name}}"/>
+        </div>
+        {% else %}
+        <div class="mdl-card__title file-preview-section">(No preview)</div>
+        {% endif %}
+
+        <div class="mdl-card__actions mdl-card--border file-actions">
+            <span class="file-name">{{file.name}}</span>
+            <div class="mdl-layout-spacer"></div>
+
+            <button class="mdl-button mdl-js-button mdl-button--icon download-file-button"
+                    id="download-file-{{file.id}}"
+                    data-file-name="{{file.name}}">
+                <i class="mdl-color-text--white material-icons"
+                   role="presentation">remove_red_eye</i>
+            </button>
+            <span class="mdl-tooltip"
+                  data-mdl-for="download-file-{{file.id}}">Download File</span>
+
+
+            <button class="mdl-button mdl-js-button mdl-button--icon info-file-button"
+                    id="info-file-{{file.id}}"
+                    data-file-name="{{file.name}}">
+                <i class="mdl-color-text--white material-icons"
+                   role="presentation">mode_edit</i>
+            </button>
+            <span class="mdl-tooltip"
+                  data-mdl-for="info-file-{{file.id}}">File Info</span>
+
+
+            <button class="mdl-button mdl-js-button mdl-button--icon delete-file-button"
+                    id="delete-file-{{file.id}}"
+                    data-file-name="{{file.name}}">
+                <i class="mdl-color-text--white material-icons"
+                   role="presentation">delete_forever</i>
+            </button>
+            <span class="mdl-tooltip"
+                  data-mdl-for="delete-file-{{file.id}}">Delete File</span>
+
+
+            <button class="mdl-button mdl-js-button mdl-button--icon refresh-file-button"
+                    id="refresh-file-{{file.id}}"
+                    data-file-name="{{file.name}}">
+                <i class="mdl-color-text--white material-icons"
+                   role="presentation">refresh</i>
+            </button>
+            <span class="mdl-tooltip"
+                  data-mdl-for="refresh-file-{{file.id}}">Refresh File</span>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% include "admin/footer.html" %}

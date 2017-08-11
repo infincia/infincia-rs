@@ -1,0 +1,27 @@
+{% include "header.html" %}
+    <div class="row featurette">
+        <div class="col-md-8 page-section">
+            <a href="/blog"><h3 class="featurette-heading"><i class="fa fa-rss"></i> Blog</h3></a>
+
+            <div class="postlist-item">
+            
+                <div class="post-title"><a href="/blog/{{post.url}}">{{ post.title }}</a></div>
+            
+                <div class="post-content">
+                    {{post.html|safe}}
+                </div>
+           
+                <span class="post-date">
+                    posted {{ post.date|to_relative }}, updated {{ post.updated|to_relative }}
+                </span>
+                <div class="post-tags">
+                    {% for tag in post.tag_list %}
+                        <a class="tag-hash" href="/blog/tag/{{ tag }}">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+             </div>
+        </div>
+    {% include "sidebar.html" %}
+    </div>
+
+{% include "footer.html" %}

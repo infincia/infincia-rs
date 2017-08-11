@@ -1,0 +1,27 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ title }}</title>
+        <atom:link href="https://infincia.com/blog/feed.rss" rel="self" type="application/rss+xml"/>
+        <link>
+        {{ link }}</link>
+        <description>{{ description }}</description>
+        <generator>infincia-rs</generator>
+        <language>en</language>
+        <managingEditor>steve@infincia.com (Stephen Oliver)</managingEditor>
+        <webMaster>steve@infincia.com (Stephen Oliver)</webMaster>
+        <copyright>2017 Infincia LLC</copyright>
+        <lastBuildDate>{{ lastbuilddate }}</lastBuildDate>
+        {% for post in posts %}
+
+        <item>
+            <title>{{ post.title }}</title>
+            <link>
+            https://infincia.com/blog/{{post.url}}</link>
+            <pubDate>{{ post.date }}</pubDate>
+            <author>steve@infincia.com (Stephen Oliver)</author>
+            <guid>https://infincia.com/blog/{{post.url}}</guid>
+            <description>{{ post.description }}</description>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

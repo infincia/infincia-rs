@@ -1,0 +1,87 @@
+/* Infincia, Copyright 2011-2017 Stephen Oliver */
+@import "variables";
+
+
+.github-repository {
+    margin-top: 36px;
+    position: relative;
+    clear: both;
+}
+
+
+.github-repository [class^="fa fa-"],
+.github-repository [class*=" fa fa-"] {
+    color: @text-color;
+}
+
+
+.github-repository .repo-top {
+    font-family: @text-font;
+    font-size: 20px;
+    text-decoration: none;
+    color: @text-color;
+    margin-bottom: 6px;
+}
+
+
+.github-repository .repo-top .repo-author span {
+    text-transform: capitalize;
+}
+
+
+.github-repository .repo-top .repo-link {
+    text-transform: lowercase;
+}
+
+
+.github-repository .repo-top .repo-author,
+.github-repository .repo-top .repo-author:visited,
+.github-repository .repo-top .repo-link,
+.github-repository .repo-top .repo-link:visited {
+    color: @text-color;
+    text-decoration: none !important;
+    font-weight: bold !important;
+}
+
+
+.github-repository .repo-sub {
+    font-family: @text-font;
+    color: @text-color;
+    font-weight: bold;
+}
+
+
+.github-repository .repo-sub .repo-forks {
+    height: 30px;
+    line-height: 30px;
+}
+
+
+.github-repository .repo-sub .repo-forks .value {
+}
+
+
+.github-repository .repo-sub .repo-language,
+.github-repository .repo-sub .repo-commit {
+
+}
+
+
+.github-repository .repo-description {
+    margin-bottom: 6px;
+    word-wrap: break-word;
+    color: @text-color;
+}
+
+
+.github-repository .github-readmore {
+    padding-top: 0;
+}
+
+
+.github-repository .github-readmore a,
+.github-repository .github-readmore a:visited {
+    font-weight: normal;
+    color: @link-color;
+    text-decoration: none;
+}

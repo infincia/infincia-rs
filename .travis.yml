@@ -1,0 +1,58 @@
+dist: trusty
+sudo: false
+
+env:
+  global:
+    - PROJECT_NAME="infincia"
+    - MAKE_DEB=no
+    - DEB_MAINTAINER="Stephen Oliver <steve@infincia.com>"
+    - DEB_DESCRIPTION="Infincia"
+
+
+addons:
+  apt:
+    packages:
+      - linux-headers-generic
+
+matrix:
+  include:
+    - os: linux
+      rust: nightly
+      env: TARGET=x86_64-unknown-linux-gnu
+    - os: osx
+      osx_image: xcode8.3
+      rust: nightly
+      env: TARGET=x86_64-apple-darwin
+
+before_install:
+  - export PATH="$PATH:$HOME/.cargo/bin"
+
+install:
+  - bash ci/install.sh
+
+script:
+  - bash unit.sh
+  - bash release.sh
+
+before_deploy:
+  - bash ci/before_deploy.sh
+
+deploy:
+  provider: releases
+  api_key:
+    secure: uBQS6bf7gVRgC1RxsiRc8KraU5DhKar4JQkErrDc1K70XJm2FY8pfEXIj/kDbzbYmJ/PR5a+jNT3iW9WzBJx5azf1RvB82gHqVcTjsoH9o7udWlY2sMp7xnxKMumeWN+0bur75kVlWqm5C9jo8i26NjOKFRA1Dn3PTDHHqLlVPI32sTNOC7Q3aGEHss6QXvIAfBrjgwA3YRA2A8omrgJ2KUXstN6XRzV4g3U2BNg0Lb+X0MeunLORzY9Rj9gxqCeZART9XGGyt4JDfNKumhsV5BWJs5mhPFLF8XklaiqTFiIaNiQuVocyGWxdPVUQ7EECzzGw2MsBLBrWbAd6GVnuYyQMkJ/feBAd8cEbc4/itNcD1vwdGTgnOUT7Ii60nDOifKOX8WyrKAqsD2OuSvljylzzH7slUrwPIwhGOZLoqlYSHzZj4qXYwKBnq0SlXy0PLH9ruEYsz7yd/f6hOdHjtoSEQz+fJ/WiwRGLGOJ5kM+QsqZpJvOEKumWbkVgi+llXPSKHMlSuKgVHjXb/W641imT9uKL5igJceRIYRVPthpzj1FMuw/GqI/oCXj5fbIBHlXg5VmsJoSH62tIah94jjbz3f8IZNdECSY12UinCFO5uJ/olBN3HsZP8ZdR0P1g9BxE7m5PzvnmDpI1nif3/qdv250OjBJ7XnyIZGNZoQ=
+  file_glob: true
+  file: ${PROJECT_NAME}-${TRAVIS_TAG}-${TARGET}.*
+  skip_cleanup: true
+  on:
+    condition: $TRAVIS_RUST_VERSION = nightly
+    tags: true
+
+branches:
+  only:
+    - master
+    - /^v\d+\.\d+\.\d+.*$/
+
+notifications:
+  email:
+    on_success: never

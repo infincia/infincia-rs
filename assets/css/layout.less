@@ -1,0 +1,84 @@
+@import "variables";
+
+
+#infinciacontainer {
+    min-height: 200px;
+}
+
+
+.full-width {
+    width: 100%;
+}
+
+
+span.right {
+    float: right;
+    text-align: right;
+}
+
+
+span.left {
+    float: left;
+    text-align: left;
+}
+
+
+.horizontal-line {
+    display: block;
+    height: 6px;
+    background: #DADADA;
+}
+
+
+.page-section {
+    margin-top: @page-section-margin;
+    margin-bottom: @page-section-margin;
+}
+
+
+@media (min-width: 1200px) {
+    .page-section {
+        margin-top: @page-section-margin;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .page-section {
+        margin-top: @page-section-margin;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .page-section {
+        margin-top: @page-section-margin;
+    }
+}
+
+
+.page-section h1,
+.page-section h2,
+.page-section h3,
+.page-section h4,
+.page-section h5,
+.page-section h6 {
+    font-weight: bold;
+}
+
+
+.section-title {
+    color: @text-color !important;
+    font-size: 20px;
+    font-family: @heading-font;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+
+.section-title a,
+.section-title a:visited {
+    color: @text-color;
+    text-decoration: none !important;
+    font-weight: bold;
+}

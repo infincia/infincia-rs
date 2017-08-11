@@ -1,0 +1,103 @@
+{% include "admin/header.html" %}
+
+<script type="text/javascript">
+    console.log("dashboard module loading...");
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("dashboard module loaded");
+
+        Infincia.initDashboard();
+    });
+    window.newPost = false;
+</script>
+
+<div class="mdl-grid dashboard-panel">
+
+
+    <div id="graph"
+         class="admin-card-wide mdl-card mdl-shadow--2dp mdl-cell--12-col"></div>
+
+    <div class="admin-card-wide mdl-card mdl-shadow--2dp mdl-cell--6-col"
+         id="system">
+        <table class="full-width mdl-data-table mdl-js-data-table">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric full-width">System</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">CPU</td>
+                <td id="cpufield"></td>
+
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">RAM</td>
+                <td id="memusedfield"></td>
+
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Swap</td>
+                <td id="swapusedfield"></td>
+
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Uptime</td>
+                <td id="uptimefield"></td>
+
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Disk</td>
+                <td id="diskusedfield"></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="admin-card-wide mdl-card mdl-shadow--2dp mdl-cell--6-col"
+         id="application">
+
+        <table class="full-width mdl-data-table mdl-js-data-table">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric full-width">Application</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">OS</td>
+                <td id="os-version"></td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">App Version</td>
+                <td id="application-version"></td>
+
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Workers</td>
+                <td id="application-workers"></td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">Maintenance Mode</td>
+                <td>
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                           for="maintenance-switch">
+                        <input type="checkbox"
+                               id="maintenance-switch"
+                               class="mdl-switch__input">
+                        <span class="mdl-switch__label"></span>
+                    </label>
+                </td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% include "admin/footer.html" %}
